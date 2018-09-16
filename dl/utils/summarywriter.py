@@ -20,9 +20,11 @@ class SummaryWriter():
     def close(self):
         
         self.data = np.array(self.data)
+        plt.figure()
+        
         plt.plot(self.data[:,0],self.data[:,1],label=self.legend[0])
         plt.plot(self.data[:,0],self.data[:,2],label=self.legend[1])
-        plt.title(self.title)
+        # plt.title(self.title)
         plt.xlabel(self.xlab)
         plt.ylabel(self.ylab)
         plt.legend()

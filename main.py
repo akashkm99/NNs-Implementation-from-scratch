@@ -8,6 +8,7 @@ import numpy as np
 from load_mnist import load_mnist
 
 import pandas as pd
+import cv2
 
 
 X_train,Y_train,x_test,y_test = load_mnist()
@@ -16,8 +17,12 @@ b_size = 64
 lr = 1e-3
 momentum = 0.9 
 
-writer = SummaryWriter("./plots/loss_sigmoid_1e-3.png",title="Plot of Cross Entopy Loss vs No of Iters",xlab="No. of Iters",ylab="Cross Entopy Loss",legend=["Train","Test"])
-writer1 = SummaryWriter("./plots/acc_sigmoid_1e-3.png",title="Plot of Accuracy vs No of Iters",xlab="No. of Iters",ylab="Accuracy",legend=["Train","Test"])
+name = "q1_lr_1e-3_"
+
+
+
+writer = SummaryWriter("./plots/" + str(name) +".png",title="Plot of Cross Entopy Loss vs No of Iters",xlab="No. of Iters",ylab="Cross Entopy Loss",legend=["Train","Test"])
+# writer1 = SummaryWriter("./plots/acc_sigmoid_1e-3_l2_0.05.png",title="Plot of Accuracy vs No of Iters",xlab="No. of Iters",ylab="Accuracy",legend=["Train","Test"])
 
 
 loss_fn = Softmax_crossentropy()
@@ -42,10 +47,12 @@ def evaluate(y_actual,y_pred):
     dict_ = {'Precision':precision,'Recall':recall,'F-Score':f_score}
     stats = pd.DataFrame(dict_)
 
+    confusion_matrix =  pd.DataFrame(np.matrix(confusion_matrix))
+
     return confusion_matrix,stats
 
 
-def train(x_train,y_train,x_val,y_val,model,opt):
+def train(x_train,y_train,x_val,y_val,x_test,y_test,model,opt,fold):
     
     len_train = x_train.shape[0]
 
@@ -84,21 +91,29 @@ def train(x_train,y_train,x_val,y_val,model,opt):
 
             confusion_matrix,val_stats,val_loss_std,val_loss,val_acc = validate(x_val,y_val,model,flag)
 
-            print 'Iteration: %d Train Loss: %f Train Accuracy: %f Val Loss: %f Val Accuracy: %f' %(idx+1,loss,accuracy,val_loss,val_acc) 
-            writer.add_scalar([idx,loss,val_loss])
-            writer1.add_scalar([idx,accuracy,val_acc])
+            print 'Iteration: %d Train Loss: %f Train Accuracy: %f Val Loss: %f Val Accuracy: %f' %(idx+1,loss,accuracy,val_loss,val_acc)
+            if fold == 0: 
+                writer.add_scalar([idx,loss,val_loss])
+            # writer1.add_scalar([idx,accuracy,val_acc])
+            
             if flag:
+                val_stats = val_stats.round(4)
+                val_stats.to_excel("excel_files/Stats_" + name + str(fold) + '.xlsx')
+                confusion_matrix.to_excel("excel_files/Matrix_" + name + str(fold) + '.xlsx')
+
                 print "Confusion Matrix"
                 print confusion_matrix
                 print "Statistics"
                 print val_stats
                 print "Overall Accuracy: %f" %(val_acc)
                 print "Average Error: %f Standard Deviation on Error: %f" %(val_loss,val_loss_std)
+                guess(x_test,y_test,model,fold)
+
 
             y_pred = np.array([]);y_actual=np.array([]);loss_v=np.array([]);flag=False
-
-    writer.close()
-    writer1.close()
+    if fold == 0:
+        writer.close()
+    # writer1.close()
 
 def validate(x_val,y_val,model,eval=False):
 
@@ -132,8 +147,31 @@ def validate(x_val,y_val,model,eval=False):
 
     return None,None,None,loss,accuracy
 
+def guess(x_test,y_test,model,fold):
+    
+    output = model(x_test)
+    result = loss_fn(y_test,output,return_softmax=True)
+    y_pred = result[0]
 
-def k_fold_validation(X_train,Y_train,k=5):
+    id_3 = np.argsort(y_pred,axis=1)[:,:-4:-1]
+    col_id = np.arange(y_pred.shape[0])[:,None]
+    probab = y_pred[col_id,id_3]
+
+    dict_ = {'Top 1': id_3[:,0],'Probability 1':probab[:,0],'Top 2': id_3[:,1],'Probability 2':probab[:,1],'Top 3': id_3[:,2],'Probability 3':probab[:,2]}
+    df = pd.DataFrame(dict_,columns=['Top 1','Probability 1','Top 2','Probability 2','Top 3','Probability 3'])
+    df = df.round(4)
+    df.to_excel("excel_files/Guess_" + name +str(fold) +'.xlsx')
+    print df
+
+def save_images(x_test):
+
+    x_test = np.reshape(x_test,(-1,28,28))*255.0
+
+    for i in range(x_test.shape[0]):
+        img = x_test[i,...]
+        cv2.imwrite('test_images/{}.jpg'.format(i),img)
+
+def k_fold_validation(X_train,Y_train,x_test,y_test,k=5):
     
     length = X_train.shape[0]
     fold_len = length/k
@@ -143,9 +181,9 @@ def k_fold_validation(X_train,Y_train,k=5):
         
         # model = Sequential(Linear(784,1000),Relu(),Linear(1000,500),Relu(),Linear(500,250),Relu(),Linear(250,10))
 
-        # model = Sequential(Linear(784,1000),Sigmoid(),Linear(1000,500),Sigmoid(),Linear(500,250),Sigmoid(),Linear(250,10))
+        model = Sequential(Linear(784,1000),Sigmoid(),Linear(1000,500),Sigmoid(),Linear(500,250),Sigmoid(),Linear(250,10))
 
-        model = Sequential(Linear(784,1000,l2=0.1),Sigmoid(),Linear(1000,500,l2=0.9),Sigmoid(),Linear(500,250,l2=0.9),Sigmoid(),Linear(250,10,l2=0.9))
+        # model = Sequential(Linear(784,1000,l2=0.05),Sigmoid(),Linear(1000,500,l2=0.05),Sigmoid(),Linear(500,250,l2=0.05),Sigmoid(),Linear(250,10,l2=0.05))
 
         opt = SGD(model.parameters,lr=lr,momentum=momentum)
 
@@ -159,9 +197,9 @@ def k_fold_validation(X_train,Y_train,k=5):
 
         print 'K-Fold Validation {}/{}'.format(i+1,k)
         print '-'*30
-        train(x_train,y_train,x_val,y_val,model,opt)
-        break
+        train(x_train,y_train,x_val,y_val,x_test,y_test,model,opt,i)
 
 
 if __name__ == '__main__':
-    k_fold_validation(X_train,Y_train,5)
+    # save_images(x_test[:20])
+    k_fold_validation(X_train,Y_train,x_test[:20,...],y_test[:20,...],5)

@@ -1,0 +1,213 @@
+2018-09-16 21:56:03.516159: I tensorflow/core/platform/s3/aws_logging.cc:53] Initializing Curl library
+K-Fold Validation 1/5
+------------------------------
+Iteration: 200 Train Loss: 1.232604 Train Accuracy: 0.591016 Val Loss: 0.566917 Val Accuracy: 0.826333
+Iteration: 400 Train Loss: 0.488446 Train Accuracy: 0.848594 Val Loss: 0.442569 Val Accuracy: 0.876417
+Iteration: 600 Train Loss: 0.409005 Train Accuracy: 0.872729 Val Loss: 0.338529 Val Accuracy: 0.898917
+Iteration: 800 Train Loss: 0.331325 Train Accuracy: 0.899687 Val Loss: 0.308696 Val Accuracy: 0.910500
+Iteration: 1000 Train Loss: 0.320633 Train Accuracy: 0.902109 Val Loss: 0.269998 Val Accuracy: 0.921333
+Iteration: 1200 Train Loss: 0.309224 Train Accuracy: 0.901864 Val Loss: 0.264524 Val Accuracy: 0.923500
+Iteration: 1400 Train Loss: 0.236280 Train Accuracy: 0.928047 Val Loss: 0.235639 Val Accuracy: 0.928167
+Iteration: 1600 Train Loss: 0.248331 Train Accuracy: 0.922969 Val Loss: 0.273873 Val Accuracy: 0.913250
+Iteration: 1800 Train Loss: 0.247983 Train Accuracy: 0.920583 Val Loss: 0.196313 Val Accuracy: 0.942000
+Iteration: 2000 Train Loss: 0.204203 Train Accuracy: 0.936797 Val Loss: 0.190759 Val Accuracy: 0.942167
+Iteration: 2200 Train Loss: 0.205311 Train Accuracy: 0.938750 Val Loss: 0.229820 Val Accuracy: 0.926917
+Iteration: 2400 Train Loss: 0.200363 Train Accuracy: 0.936717 Val Loss: 0.212837 Val Accuracy: 0.934917
+Iteration: 2600 Train Loss: 0.174888 Train Accuracy: 0.945859 Val Loss: 0.198639 Val Accuracy: 0.936250
+Iteration: 2800 Train Loss: 0.183991 Train Accuracy: 0.943203 Val Loss: 0.188306 Val Accuracy: 0.940667
+Iteration: 3000 Train Loss: 0.163120 Train Accuracy: 0.947525 Val Loss: 0.164084 Val Accuracy: 0.950000
+Iteration: 3200 Train Loss: 0.155492 Train Accuracy: 0.953828 Val Loss: 0.178980 Val Accuracy: 0.945583
+Iteration: 3400 Train Loss: 0.165992 Train Accuracy: 0.947055 Val Loss: 0.174624 Val Accuracy: 0.945667
+Iteration: 3600 Train Loss: 0.136316 Train Accuracy: 0.957578 Val Loss: 0.155142 Val Accuracy: 0.951917
+Iteration: 3800 Train Loss: 0.142862 Train Accuracy: 0.956875 Val Loss: 0.149366 Val Accuracy: 0.954250
+Iteration: 4000 Train Loss: 0.145059 Train Accuracy: 0.953164 Val Loss: 0.152768 Val Accuracy: 0.953083
+Iteration: 4200 Train Loss: 0.121180 Train Accuracy: 0.963047 Val Loss: 0.149462 Val Accuracy: 0.952750
+Iteration: 4400 Train Loss: 0.126734 Train Accuracy: 0.962031 Val Loss: 0.135535 Val Accuracy: 0.958417
+Iteration: 4600 Train Loss: 0.127616 Train Accuracy: 0.958882 Val Loss: 0.138257 Val Accuracy: 0.957667
+Iteration: 4800 Train Loss: 0.107802 Train Accuracy: 0.966953 Val Loss: 0.138791 Val Accuracy: 0.957833
+Iteration: 5000 Train Loss: 0.115156 Train Accuracy: 0.966484 Val Loss: 0.142225 Val Accuracy: 0.955667
+Iteration: 5200 Train Loss: 0.109030 Train Accuracy: 0.965774 Val Loss: 0.152680 Val Accuracy: 0.955750
+Iteration: 5400 Train Loss: 0.102026 Train Accuracy: 0.968047 Val Loss: 0.148718 Val Accuracy: 0.956250
+Iteration: 5600 Train Loss: 0.102975 Train Accuracy: 0.969844 Val Loss: 0.122203 Val Accuracy: 0.962667
+Iteration: 5800 Train Loss: 0.097704 Train Accuracy: 0.968515 Val Loss: 0.124468 Val Accuracy: 0.961583
+Iteration: 6000 Train Loss: 0.090265 Train Accuracy: 0.973594 Val Loss: 0.122543 Val Accuracy: 0.965083
+Iteration: 6200 Train Loss: 0.096132 Train Accuracy: 0.972039 Val Loss: 0.151183 Val Accuracy: 0.953083
+Iteration: 6400 Train Loss: 0.083679 Train Accuracy: 0.973281 Val Loss: 0.113742 Val Accuracy: 0.965583
+Iteration: 6600 Train Loss: 0.085102 Train Accuracy: 0.975391 Val Loss: 0.118442 Val Accuracy: 0.963583
+Iteration: 6800 Train Loss: 0.085380 Train Accuracy: 0.974467 Val Loss: 0.114407 Val Accuracy: 0.965250
+Iteration: 7000 Train Loss: 0.077119 Train Accuracy: 0.976406 Val Loss: 0.126448 Val Accuracy: 0.962417
+Iteration: 7200 Train Loss: 0.074748 Train Accuracy: 0.977734 Val Loss: 0.120060 Val Accuracy: 0.966000
+Iteration: 7400 Train Loss: 0.078626 Train Accuracy: 0.976817 Val Loss: 0.108164 Val Accuracy: 0.966917
+Iteration: 7600 Train Loss: 0.067835 Train Accuracy: 0.979062 Val Loss: 0.110057 Val Accuracy: 0.968083
+Iteration: 7800 Train Loss: 0.070643 Train Accuracy: 0.978594 Val Loss: 0.104805 Val Accuracy: 0.968333
+Iteration: 8000 Train Loss: 0.067324 Train Accuracy: 0.980341 Val Loss: 0.107139 Val Accuracy: 0.968583
+Confusion Matrix
+      0     1     2     3     4     5     6     7     8     9
+0  1182     0     4     2     4     2     5     0     6     1
+1     0  1321     7     7     2     0     0     1    11     2
+2     0     3  1152    13     1     0     0     3     4     0
+3     0     2    18  1163     1    19     2     7     9     7
+4     0     5    14     0  1146     1     6     1     0    11
+5     1     0     2     9     4  1019     4     0     7     2
+6     6     2     5     0     3     8  1182     0     2     0
+7     1     1    13     8     5     1     1  1239     3     7
+8     2     4     7    11     0     9     5     1  1086     2
+9     3     2     4    13    19     5     1     7     6  1133
+Statistics
+   F-Score  Precision  Recall
+0   0.9846     0.9891  0.9801
+1   0.9818     0.9858  0.9778
+2   0.9592     0.9396  0.9796
+3   0.9478     0.9486  0.9471
+4   0.9675     0.9671  0.9679
+5   0.9650     0.9577  0.9723
+6   0.9793     0.9801  0.9785
+7   0.9764     0.9841  0.9687
+8   0.9606     0.9577  0.9636
+9   0.9610     0.9725  0.9497
+Overall Accuracy: 0.968583
+Average Error: 0.107139 Standard Deviation on Error: 0.614190
+    Top 1  Probability 1  Top 2  Probability 2  Top 3  Probability 3
+0       7         0.9991      2         0.0007      3         0.0002
+1       2         0.9999      1         0.0001      3         0.0000
+2       1         0.9997      7         0.0001      8         0.0001
+3       0         0.9983      2         0.0008      9         0.0007
+4       4         0.9994      9         0.0005      2         0.0000
+5       1         0.9987      7         0.0013      4         0.0000
+6       4         0.9618      8         0.0376      9         0.0004
+7       9         0.9888      3         0.0063      7         0.0025
+8       6         0.9321      5         0.0637      8         0.0024
+9       9         0.9910      4         0.0072      7         0.0014
+10      0         0.9997      2         0.0002      9         0.0000
+11      6         0.9981      8         0.0016      5         0.0002
+12      9         0.9984      4         0.0010      7         0.0005
+13      0         0.9998      9         0.0001      7         0.0001
+14      1         0.9996      8         0.0003      3         0.0001
+15      5         0.9992      3         0.0008      1         0.0001
+16      9         0.9980      4         0.0014      8         0.0003
+17      7         0.9983      2         0.0016      3         0.0002
+18      3         0.9177      8         0.0712      2         0.0086
+19      4         1.0000      9         0.0000      2         0.0000
+K-Fold Validation 2/5
+------------------------------
+Iteration: 200 Train Loss: 1.176851 Train Accuracy: 0.603359 Val Loss: 0.521028 Val Accuracy: 0.829417
+Iteration: 400 Train Loss: 0.506714 Train Accuracy: 0.840469 Val Loss: 0.380859 Val Accuracy: 0.882917
+Iteration: 600 Train Loss: 0.367159 Train Accuracy: 0.885182 Val Loss: 0.351289 Val Accuracy: 0.895333
+Iteration: 800 Train Loss: 0.356880 Train Accuracy: 0.891641 Val Loss: 0.321879 Val Accuracy: 0.900833
+Iteration: 1000 Train Loss: 0.328191 Train Accuracy: 0.899297 Val Loss: 0.278558 Val Accuracy: 0.916667
+Iteration: 1200 Train Loss: 0.256837 Train Accuracy: 0.920661 Val Loss: 0.267457 Val Accuracy: 0.918917
+Iteration: 1400 Train Loss: 0.270317 Train Accuracy: 0.915000 Val Loss: 0.283089 Val Accuracy: 0.911833
+Iteration: 1600 Train Loss: 0.270309 Train Accuracy: 0.913984 Val Loss: 0.244488 Val Accuracy: 0.921583
+Iteration: 1800 Train Loss: 0.201095 Train Accuracy: 0.939145 Val Loss: 0.242341 Val Accuracy: 0.924917
+Iteration: 2000 Train Loss: 0.226552 Train Accuracy: 0.930625 Val Loss: 0.243077 Val Accuracy: 0.925667
+Iteration: 2200 Train Loss: 0.215548 Train Accuracy: 0.932422 Val Loss: 0.211222 Val Accuracy: 0.935500
+Iteration: 2400 Train Loss: 0.176671 Train Accuracy: 0.946350 Val Loss: 0.198692 Val Accuracy: 0.936583
+Iteration: 2600 Train Loss: 0.189268 Train Accuracy: 0.941562 Val Loss: 0.212404 Val Accuracy: 0.933917
+Iteration: 2800 Train Loss: 0.167246 Train Accuracy: 0.946953 Val Loss: 0.202158 Val Accuracy: 0.937333
+Iteration: 3000 Train Loss: 0.161079 Train Accuracy: 0.952303 Val Loss: 0.177018 Val Accuracy: 0.944667
+Iteration: 3200 Train Loss: 0.171215 Train Accuracy: 0.945391 Val Loss: 0.172704 Val Accuracy: 0.947333
+Iteration: 3400 Train Loss: 0.138655 Train Accuracy: 0.958412 Val Loss: 0.181776 Val Accuracy: 0.942750
+Iteration: 3600 Train Loss: 0.147923 Train Accuracy: 0.956094 Val Loss: 0.176720 Val Accuracy: 0.945000
+Iteration: 3800 Train Loss: 0.154146 Train Accuracy: 0.950937 Val Loss: 0.160521 Val Accuracy: 0.948000
+Iteration: 4000 Train Loss: 0.116576 Train Accuracy: 0.964364 Val Loss: 0.186489 Val Accuracy: 0.939083
+Iteration: 4200 Train Loss: 0.129818 Train Accuracy: 0.960547 Val Loss: 0.207992 Val Accuracy: 0.937667
+Iteration: 4400 Train Loss: 0.137178 Train Accuracy: 0.957109 Val Loss: 0.154560 Val Accuracy: 0.951083
+Iteration: 4600 Train Loss: 0.102171 Train Accuracy: 0.968907 Val Loss: 0.151657 Val Accuracy: 0.952000
+Iteration: 4800 Train Loss: 0.120750 Train Accuracy: 0.964063 Val Loss: 0.146399 Val Accuracy: 0.955250
+Iteration: 5000 Train Loss: 0.116930 Train Accuracy: 0.963750 Val Loss: 0.148473 Val Accuracy: 0.954250
+Iteration: 5200 Train Loss: 0.093181 Train Accuracy: 0.971648 Val Loss: 0.145498 Val Accuracy: 0.955250
+Iteration: 5400 Train Loss: 0.106063 Train Accuracy: 0.968672 Val Loss: 0.152345 Val Accuracy: 0.952833
+Iteration: 5600 Train Loss: 0.101230 Train Accuracy: 0.968281 Val Loss: 0.131987 Val Accuracy: 0.961167
+Iteration: 5800 Train Loss: 0.087811 Train Accuracy: 0.974389 Val Loss: 0.136139 Val Accuracy: 0.957250
+Iteration: 6000 Train Loss: 0.099902 Train Accuracy: 0.969531 Val Loss: 0.171013 Val Accuracy: 0.947167
+Iteration: 6200 Train Loss: 0.082214 Train Accuracy: 0.975799 Val Loss: 0.141284 Val Accuracy: 0.957167
+Iteration: 6400 Train Loss: 0.084186 Train Accuracy: 0.975625 Val Loss: 0.150245 Val Accuracy: 0.953000
+Iteration: 6600 Train Loss: 0.094561 Train Accuracy: 0.970156 Val Loss: 0.145410 Val Accuracy: 0.955583
+Iteration: 6800 Train Loss: 0.070170 Train Accuracy: 0.980733 Val Loss: 0.125780 Val Accuracy: 0.961167
+Iteration: 7000 Train Loss: 0.077920 Train Accuracy: 0.977969 Val Loss: 0.133272 Val Accuracy: 0.959500
+Iteration: 7200 Train Loss: 0.084774 Train Accuracy: 0.973594 Val Loss: 0.117141 Val Accuracy: 0.964750
+Iteration: 7400 Train Loss: 0.061377 Train Accuracy: 0.982378 Val Loss: 0.115958 Val Accuracy: 0.964000
+Iteration: 7600 Train Loss: 0.070876 Train Accuracy: 0.979297 Val Loss: 0.119044 Val Accuracy: 0.965583
+Iteration: 7800 Train Loss: 0.076863 Train Accuracy: 0.976953 Val Loss: 0.132425 Val Accuracy: 0.959333
+Iteration: 8000 Train Loss: 0.054260 Train Accuracy: 0.984571 Val Loss: 0.126882 Val Accuracy: 0.962583
+Confusion Matrix
+      0     1     2     3     4     5     6     7     8     9
+0  1151     0     5     1     0     8     8     1     0     1
+1     1  1364     4     3     0     0     3     2     3     1
+2     4     3  1133    12     3     0     5     3     8     0
+3     1     5    11  1214     0    13     3     3     8     1
+4     1     4     4     2  1092     1    25     8     9    17
+5    11     1     1    15     2  1050     9     0     5     2
+6     2     3     0     0     2     7  1147     0     1     0
+7     0     4    16     9     1     0     1  1172     3     4
+8     4    11     3    20     3     9    12     0  1099     4
+9     9     2     1     9    29    12     5    11    11  1129
+Statistics
+   F-Score  Precision  Recall
+0   0.9758     0.9721  0.9796
+1   0.9820     0.9764  0.9877
+2   0.9647     0.9618  0.9675
+3   0.9544     0.9447  0.9643
+4   0.9516     0.9647  0.9390
+5   0.9563     0.9545  0.9580
+6   0.9639     0.9417  0.9871
+7   0.9726     0.9767  0.9686
+8   0.9507     0.9582  0.9433
+9   0.9499     0.9741  0.9269
+Overall Accuracy: 0.962583
+Average Error: 0.126882 Standard Deviation on Error: 0.658603
+    Top 1  Probability 1  Top 2  Probability 2  Top 3  Probability 3
+0       7         0.9977      2         0.0015      3         0.0008
+1       2         0.9976      1         0.0023      3         0.0000
+2       1         0.9997      2         0.0002      7         0.0001
+3       0         0.9995      9         0.0003      6         0.0001
+4       4         0.9995      9         0.0003      2         0.0000
+5       1         0.9997      7         0.0003      3         0.0000
+6       4         0.9785      8         0.0201      5         0.0009
+7       9         0.9921      3         0.0059      7         0.0015
+8       6         0.8245      5         0.1686      4         0.0042
+9       9         0.9774      4         0.0128      7         0.0097
+10      0         0.9997      2         0.0002      6         0.0000
+11      6         0.9994      5         0.0004      8         0.0002
+12      9         0.9991      4         0.0008      7         0.0001
+13      0         1.0000      9         0.0000      2         0.0000
+14      1         1.0000      3         0.0000      7         0.0000
+15      5         0.9974      3         0.0024      1         0.0002
+16      9         0.9990      4         0.0009      7         0.0001
+17      7         0.9969      2         0.0015      3         0.0015
+18      3         0.8453      8         0.1136      2         0.0301
+19      4         0.9999      7         0.0001      2         0.0000
+K-Fold Validation 3/5
+------------------------------
+Iteration: 200 Train Loss: 1.265457 Train Accuracy: 0.578750 Val Loss: 0.535248 Val Accuracy: 0.829417
+Iteration: 400 Train Loss: 0.477606 Train Accuracy: 0.850625 Val Loss: 0.453637 Val Accuracy: 0.857083
+Iteration: 600 Train Loss: 0.369652 Train Accuracy: 0.890899 Val Loss: 0.388955 Val Accuracy: 0.882250
+Iteration: 800 Train Loss: 0.366357 Train Accuracy: 0.886406 Val Loss: 0.349100 Val Accuracy: 0.891583
+Iteration: 1000 Train Loss: 0.285288 Train Accuracy: 0.911563 Val Loss: 0.303900 Val Accuracy: 0.906333
+Iteration: 1200 Train Loss: 0.280699 Train Accuracy: 0.914239 Val Loss: 0.292305 Val Accuracy: 0.910000
+Iteration: 1400 Train Loss: 0.290783 Train Accuracy: 0.908359 Val Loss: 0.265490 Val Accuracy: 0.919500
+Iteration: 1600 Train Loss: 0.216695 Train Accuracy: 0.934453 Val Loss: 0.250832 Val Accuracy: 0.921750
+Iteration: 1800 Train Loss: 0.245095 Train Accuracy: 0.923481 Val Loss: 0.268788 Val Accuracy: 0.917917
+Iteration: 2000 Train Loss: 0.232796 Train Accuracy: 0.927031 Val Loss: 0.232130 Val Accuracy: 0.927917
+Iteration: 2200 Train Loss: 0.176399 Train Accuracy: 0.946562 Val Loss: 0.216872 Val Accuracy: 0.934500
+Iteration: 2400 Train Loss: 0.207745 Train Accuracy: 0.935542 Val Loss: 0.222339 Val Accuracy: 0.930583
+Iteration: 2600 Train Loss: 0.191283 Train Accuracy: 0.939375 Val Loss: 0.188952 Val Accuracy: 0.941333
+Iteration: 2800 Train Loss: 0.157815 Train Accuracy: 0.952344 Val Loss: 0.206353 Val Accuracy: 0.936083
+Iteration: 3000 Train Loss: 0.185645 Train Accuracy: 0.941338 Val Loss: 0.199466 Val Accuracy: 0.937917
+Iteration: 3200 Train Loss: 0.153261 Train Accuracy: 0.952969 Val Loss: 0.192176 Val Accuracy: 0.938583
+Iteration: 3400 Train Loss: 0.145938 Train Accuracy: 0.954809 Val Loss: 0.193832 Val Accuracy: 0.939500
+Iteration: 3600 Train Loss: 0.164840 Train Accuracy: 0.946797 Val Loss: 0.182718 Val Accuracy: 0.942833
+Iteration: 3800 Train Loss: 0.129719 Train Accuracy: 0.960391 Val Loss: 0.162495 Val Accuracy: 0.949083
+Iteration: 4000 Train Loss: 0.132133 Train Accuracy: 0.957628 Val Loss: 0.184886 Val Accuracy: 0.941917
+Iteration: 4200 Train Loss: 0.144593 Train Accuracy: 0.954063 Val Loss: 0.170797 Val Accuracy: 0.947333
+Iteration: 4400 Train Loss: 0.108221 Train Accuracy: 0.967422 Val Loss: 0.152583 Val Accuracy: 0.950917
+Iteration: 4600 Train Loss: 0.121989 Train Accuracy: 0.961231 Val Loss: 0.158831 Val Accuracy: 0.950083
+Iteration: 4800 Train Loss: 0.129582 Train Accuracy: 0.959844 Val Loss: 0.148117 Val Accuracy: 0.952583
+Iteration: 5000 Train Loss: 0.093754 Train Accuracy: 0.971406 Val Loss: 0.139778 Val Accuracy: 0.957333
+Iteration: 5200 Train Loss: 0.113932 Train Accuracy: 0.964286 Val Loss: 0.148983 Val Accuracy: 0.953417
+Iteration: 5400 Train Loss: 0.107265 Train Accuracy: 0.965781 Val Loss: 0.154870 Val Accuracy: 0.951167
+Iteration: 5600 Train Loss: 0.087474 Train Accuracy: 0.974141 Val Loss: 0.140393 Val Accuracy: 0.958000
+Iteration: 5800 Train Loss: 0.104040 Train Accuracy: 0.967497 Val Loss: 0.155214 Val Accuracy: 0.953917
+Iteration: 6000 Train Loss: 0.086444 Train Accuracy: 0.973047 Val Loss: 0.132064 Val Accuracy: 0.957250
+Iteration: 6200 Train Loss: 0.086361 Train Accuracy: 0.974624 Val Loss: 0.137748 Val Accuracy: 0.956833
+Iteration: 6400 Train Loss: 0.097727 Train Accuracy: 0.969922 Val Loss: 0.159002 Val Accuracy: 0.951167

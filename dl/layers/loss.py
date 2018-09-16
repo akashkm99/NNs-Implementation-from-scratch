@@ -31,5 +31,5 @@ class Softmax_crossentropy():
         self.grad = (self.softmax - self.y)
         return self.grad 
 
-    def __call__ (self,target,logit):
-        return self.forward(target,logit)
+    def __call__ (self,target,logit,return_softmax=False):
+        return self.forward(target,logit,return_softmax)
