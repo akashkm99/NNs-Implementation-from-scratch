@@ -3,16 +3,16 @@ from ..parameters import Parameter
 
 class Linear():
     
-    def __init__(self,input_size,output_size,bias=True):
+    def __init__(self,input_size,output_size,l2=0,bias=True):
         
         self.input_size = input_size
         self.output_size = output_size
-        self.xavier_initialization()
         self.bias_true = bias
+        self.l2 = l2
         
-        self.initial_value = self.xavier_initialization()
+        initial_value = self.normal_initialization()
 
-        self.weight = Parameter(self.initial_value)
+        self.weight = Parameter(initial_value)
         
         if self.bias_true:
             self.bias = Parameter(np.zeros([1,self.output_size]))
@@ -20,6 +20,10 @@ class Linear():
     def xavier_initialization(self):
 
          return np.random.randn(self.input_size,self.output_size) / np.sqrt(self.input_size)
+    
+    def normal_initialization(self):
+
+         return np.random.randn(self.input_size,self.output_size)*0.08
 
     def relu_initialization(self):
 
@@ -28,8 +32,6 @@ class Linear():
     def glorot_initialization(self):
 
         return np.random.randn(self.input_size,self.output_size) * np.sqrt(2.0/(self.input_size+self.output_size))
-
-    
 
     def forward(self,input):
         
@@ -42,10 +44,10 @@ class Linear():
     def backward(self,grad_in):
         
         self.grad_out = np.matmul(grad_in,self.weight.data.T)
-        self.weight.grad = np.matmul(self.input.T,grad_in)
+        self.weight.grad = np.matmul(self.input.T,grad_in) + self.l2*self.weight.data
         self.bias.grad = np.sum(grad_in,0,keepdims=True)
         
-        return grad_in
+        return self.grad_out
 
  
     def __call__(self, input):
